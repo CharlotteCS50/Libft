@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cschnath <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/26 19:11:33 by cschnath          #+#    #+#             */
+/*   Updated: 2024/09/29 19:39:21 by cschnath         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+/*
+int	main(void)
+{
+	// Should return 1
+        printf("Test 0: %d\n", ft_isdigit('3'));
+        printf("Test 1: %d\n", ft_isdigit('8'));
+        printf("Test 2: %d\n", ft_isdigit('0'));
+
+        // Should return 0
+        printf("Test 3: %d\n", ft_isdigit('f'));
+        printf("Test 4: %d\n", ft_isdigit(-1));
+
+        return (0);
+}
+*/
