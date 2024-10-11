@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cschnath <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 19:46:41 by cschnath          #+#    #+#             */
-/*   Updated: 2024/09/29 19:42:14 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:45:16 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 22:56:33 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');
 }
+
 /*
 int	main(void)
 {

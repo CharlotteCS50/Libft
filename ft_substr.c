@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cschnath <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 13:23:34 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/10 13:40:29 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:50:11 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:06:37 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
+/*
 Parameters s: The string from which to create the substring
 start: The start index of the substring in the string ’s’
 len: The maximum length of the substring
@@ -42,6 +42,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		leng = len;
 	sub = (char *)ft_calloc(sizeof(char), (leng + 1));
+	if (!sub)
+		return (NULL);
 	while (s[i] && i <= ft_strlen(s))
 	{
 		if (i >= start && j < leng)
@@ -55,7 +57,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main(void)
 {
-	
-	printf("%s\n", ft_substr());
+	const char	*s = "Hello World!";
+
+	printf("ft_substr(s, 0, 5): %s\n", ft_substr(s, 0, 5));   // Expect "Hello"
+	printf("ft_substr(s, 6, 5): %s\n", ft_substr(s, 6, 5));   // Expect "World"
+	printf("ft_substr(s, 6, 50): %s\n", ft_substr(s, 6, 50)); // Expect "World!"
+	printf("ft_substr(s, 12, 5): %s\n", ft_substr(s, 12, 5)); // Expect ""
+	return 0
 }
 */

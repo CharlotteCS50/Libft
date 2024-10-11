@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cschnath <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 20:36:36 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/02 12:01:12 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:48:23 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:16:30 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == (char)c)
@@ -31,3 +29,15 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+
+/*
+int	main(void)
+{
+	const char	*s = "Hello World!";
+
+	printf("ft_strchr(s, 'o'): %s\n", ft_strchr(s, 'o')); // Expect "o World!"
+	printf("ft_strchr(s, 'W'): %s\n", ft_strchr(s, 'W')); // Expect "World!"
+	printf("ft_strchr(s, 'z'): %p\n", ft_strchr(s, 'z')); // Expect NULL
+	return (0);
+}
+*/

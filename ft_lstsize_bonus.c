@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 22:49:10 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/11 22:49:13 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:46:36 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:10:04 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (size - 1))
+	i = 1;
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
-		dst[i] = src[i];
+		lst = lst->next;
 		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	return (i);
 }
-
 /*
-// zu for unsigned long
 int	main(void)
 {
-	char dst[100] = "Hello";
-	char src[100] = "Good morning!";
+	t_list	*head;
 
-	// Should both return 13 (size of copied string)
-	printf("%zu\n", ft_strlcpy(dst, src, 12));
-        printf("%zu\n", ft_strlcpy(dst, src, 5));
-
+	head = ft_lstnew("First");
+	ft_lstadd_front(&head, ft_lstnew("Second"));
+	ft_lstadd_front(&head, ft_lstnew("Third"));
+	printf("ft_lstsize: %d\n", ft_lstsize(head));  // Expect 3
 	return (0);
 }
 */

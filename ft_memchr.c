@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cschnath <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 12:56:24 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/02 13:34:33 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:46:46 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:16:13 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*
+int	main(void)
+{
+	const char	*s = "Hello World!";
+
+	printf("ft_memchr(s, 'o', 12): %s\n", (char *)ft_memchr(s, 'o', 12));
+		// Expect "o World!"
+	printf("ft_memchr(s, 'W', 12): %s\n", (char *)ft_memchr(s, 'W', 12));
+		// Expect "World!"
+	printf("ft_memchr(s, 'z', 12): %p\n", ft_memchr(s, 'z', 12));        
+		// Expect NULL
+	return (0);
+}
+*/

@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 22:49:10 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/11 22:49:13 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 22:45:42 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:10:55 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (size - 1))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	if (!*lst)
+		ft_lstadd_front(lst, new);
+	else
+		ft_lstlast(*lst)->next = new;
 }
 
 /*
-// zu for unsigned long
 int	main(void)
 {
-	char dst[100] = "Hello";
-	char src[100] = "Good morning!";
+	t_list	*head;
+	t_list	*new_node;
+	t_list	*last;
 
-	// Should both return 13 (size of copied string)
-	printf("%zu\n", ft_strlcpy(dst, src, 12));
-        printf("%zu\n", ft_strlcpy(dst, src, 5));
-
+	head = ft_lstnew("First");
+	new_node = ft_lstnew("Second");
+	ft_lstadd_back(&head, new_node);
+	last = ft_lstlast(head);
+	if (last)
+		printf("ft_lstadd_back: %s\n", (char *)last->content); 
+			// Expect "Second"
 	return (0);
 }
 */

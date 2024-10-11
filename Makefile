@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cschnath <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/01 15:52:11 by cschnath          #+#    #+#              #
-#    Updated: 2024/10/02 13:31:27 by cschnath         ###   ########.fr        #
+#    Created: 2024/10/11 22:50:44 by cschnath          #+#    #+#              #
+#    Updated: 2024/10/11 22:50:47 by cschnath         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,24 +50,38 @@ SRC_NAMES = ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
-SRCS = $(SRC_NAMES)
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRC_NAMES:.c=.o)
+
+SRCBON	= ft_lstnew_bonus.c \
+	  ft_lstadd_front_bonus.c \
+	  ft_lstsize_bonus.c \
+	  ft_lstlast_bonus.c \
+	  ft_lstadd_back_bonus.c \
+	  ft_lstdelone_bonus.c \
+	  ft_lstclear_bonus.c \
+	  ft_lstiter_bonus.c \
+	  ft_lstmap_bonus.c \
+
+OBJSBON	= ${SRCBON:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
+bonus: $(OBJSBON) $(OBJS)
+	ar -rcs $(NAME) $(OBJSBON) $(OBJS)
+
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(OBJSBON)clean
 
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

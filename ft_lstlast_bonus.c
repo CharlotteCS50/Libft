@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cschnath <cschnath@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 22:49:10 by cschnath          #+#    #+#             */
-/*   Updated: 2024/10/11 22:49:13 by cschnath         ###   ########.fr       */
+/*   Created: 2024/10/11 14:54:40 by cschnath          #+#    #+#             */
+/*   Updated: 2024/10/11 23:10:27 by cschnath         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (size - 1))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /*
-// zu for unsigned long
 int	main(void)
 {
-	char dst[100] = "Hello";
-	char src[100] = "Good morning!";
+	t_list	*head;
+	t_list	*last;
 
-	// Should both return 13 (size of copied string)
-	printf("%zu\n", ft_strlcpy(dst, src, 12));
-        printf("%zu\n", ft_strlcpy(dst, src, 5));
-
+	head = ft_lstnew("First");
+	ft_lstadd_front(&head, ft_lstnew("Second"));
+	ft_lstadd_front(&head, ft_lstnew("Third"));
+	last = ft_lstlast(head);
+	if (last)
+		printf("ft_lstlast: %s\n", (char *)last->content);  // Expect "First"
 	return (0);
 }
 */
