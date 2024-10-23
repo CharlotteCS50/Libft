@@ -1,4 +1,8 @@
-# Libft
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/ztl9x7JlhSlU4MWD6h/giphy.gif" width="200"/>
+</div>
+
+<h1 align="center">libft</h1>
 
 My implementation of some of the Standard C Library functions including some additional ones.
 
@@ -22,3 +26,8 @@ As you can see from the Project instructions, there are 3 sections:
 Libc Functions: Some of the standard C functions
 Additional functions: Functions 42 deems will be useful for later projects
 Bonus Functions: Functions 42 deems will be useful for linked list manipulation
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
