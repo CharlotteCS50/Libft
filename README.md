@@ -23,11 +23,32 @@ Disclaimer: Reinventing the wheel is bad, 42 makes us do this just so we can hav
 What's in it?
 As you can see from the Project instructions, there are 3 sections:
 
-Libc Functions: Some of the standard C functions
-Additional functions: Functions 42 deems will be useful for later projects
-Bonus Functions: Functions 42 deems will be useful for linked list manipulation
+- Libc Functions: Some of the standard C functions
+- Additional functions: Useful for later projects
+- Bonus Functions: Linked lists
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Libc functions | Additional functions | Bonus Functions |
+| -------------- | -------------------- | --------------- |
+| memset	       | ft_substr   	        | ft_lstnew	      |
+| bzero	         | ft_strjoin           | ft_lstdelone	  |
+| memcpy         | ft_strtrim	          | ft_lstsize      | 
+| calloc         | ft_split	            | ft_lstlast      |
+| memmove	       | ft_itoa	            | ft_lstclear	    |
+| memchr	       | ft_striteri	        | ft_lstmap	      |
+| memcmp	       | ft_strmapi		        | ft_lstadd_back	|
+| strlen	       | ft_putchar_fd        | ft_lstadd_front |
+| strdup	       | ft_putstr_fd         |                 |
+| strlcpy	       | ft_putendl_fd        |                 |
+| strlcat	       | ft_putnbr_fd         |                 |
+| strchr			   | 		                  |                 |
+| strrchr			   | 	                    |                 |
+| strnstr			   |                      |                 |
+| strncmp			   |                      |                 |
+| atoi	         |                      |                 |
+| isalpha		     |                      |                 |
+| isdigit			   |                      |                 |
+| isalnum			   |                      |                 |
+| isascii			   |                      |                 |
+| isprint			   |                      |                 |
+| toupper			   |                      |                 |
+| tolower        |                      |                 |
